@@ -9,6 +9,10 @@ body {
 
 }
 
+*{
+    box-sizing: border-box;
+}
+
 h1 {
     font-size: 64px;
     font-weight: 800;
@@ -24,8 +28,13 @@ h3 {
     font-weight: 500;
 }
 
-h3 {
+h4 {
     font-size: 32px;
+    font-weight: 800;
+}
+
+h5 {
+    font-size: 24px;
     font-weight: 800;
 }
 
@@ -39,8 +48,13 @@ a:link{
 
 .column-container{
     padding: 0 2em;
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 ;
+}
+
+.column-cardcontainer{
+    flex-wrap: wrap;
+    max-width: 90%;
 }
 
 nav.top-navbar{
@@ -73,26 +87,43 @@ nav.top-navbar ul li a{
     padding-bottom: 2.5em;
 }
 
-.hero-content h1, .hero-content h3 {
+.hero-content .site-title h3 {
     color: #ffffff;
     text-align: right;
     margin: 0;
 }
 
-.hero-content h3 {
-    color: #FFE884;
-}
 
 .hero-content{
+    text-align: end;
     display: flex;
     justify-content: end;
     margin-top: 12em;
     margin-right: 2.5em;
+    color: #FFE884;
+    flex-direction: column;
+}
+
+.hero-content h1{
+    color: #FFF;
+}
+
+.hero-content-b{
+    display: flex;
+    justify-content: start;
+    margin-top: 3em;
+    margin-right: 2.5em;
 }
 
 .hero-content .hero-logo img{
+    margin-top: auto;
+    margin-bottom: auto;
     display: block;
     margin-left: 3em;
+}
+
+.hero-logo{
+    align-self: center;
 }
 
 .container {
@@ -116,16 +147,21 @@ nav.top-navbar ul li a{
 }
 
 .card {
-    column-span: 1;
-    margin: .5em;
-    border-radius: 8px;
+    padding: .5em;
+    flex-basis: 25%;
+}
+
+.card-container{
     box-shadow: 8px 8px 0 #00CEFF;
+    border-radius: 8px;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .card-header {
-    width: auto;
-    height:auto;
     min-height: 120px;
     background-size: 100% 100%;
     background-repeat:no-repeat;
@@ -150,11 +186,17 @@ nav.top-navbar ul li a{
 
 .cards-container{
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -.5em;
 }
 
 .card-body{
     padding: .2em 1em ;
+    flex-grow: 1;
+}
+
+.card-body p{
+    color: #424245
 }
 
 .card-button{
@@ -207,7 +249,92 @@ footer p{
     font-size: 32px;
     display: block;
     width: 320px;
+    max-width: 100%;
     margin-left: auto;
     text-align: center;
     margin-top: 3rem;
+}
+
+.post-title{
+margin: 0;
+}
+
+.post-title h1{
+    margin: 0;
+    text-align: right;
+    color: #FFE884;
+}
+
+.tags{
+
+}
+
+.tags, a{
+    font-size: 1 rem;
+    color: white;
+    padding-right: 24px;
+}
+
+.post-title p{
+    color: #ffffff;
+    text-align: left;
+}
+
+.post-content{
+    margin: auto;
+    max-width: 85%;
+    color:#FFE884;
+}
+
+.body-post{
+    max-width: 100%;
+    height: fit-content;
+    padding: 40px;
+    background-color: #FFE884;
+}
+
+.post-content h4{
+    color: #424245;
+}
+
+.post-content h5{
+    color: #FF646E;
+}
+
+.post-content p{
+    color: #424245;
+}
+
+.post-content img{
+    display: block;
+    max-width: 100%;
+}
+
+.img-par{
+    display: flex;
+}
+
+.img-post{
+    width: 40%;
+    height: auto;
+    float: left;
+    margin: 20px;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1020px) {
+    .card{
+        flex-basis: 50%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .card{
+        flex-basis: 100%;
+    }
+    .details-container{
+        flex-direction: column;
+    }
+    .hero-content .site-title  h1 {
+        font-size: 38px;
+    }
 }
